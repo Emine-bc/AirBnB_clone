@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-this module contain the class HBNBCommand
+This module contain the class HBNBCommand
 """
 import cmd
 import json
@@ -16,15 +16,15 @@ from shlex import split
 
 
 class HBNBCommand(cmd.Cmd):
-    """Simple command processor"""
+    """This class of a Simple command processor"""
 
     prompt = "(hbnb)"
     myclasses = {"BaseModel", "User", "State", "City", "Amenity",
                  "Place", "Review"}
 
     def do_create(self, args):
-        """creates new instance of the class BaseModel, saves it (to JSON file)
-        and prints the id """
+        """This func creates new instance of the class BaseModel,
+        saves it (to JSON file) and prints the id """
 
         if not args:
             print("** class name missing **")
@@ -38,7 +38,7 @@ class HBNBCommand(cmd.Cmd):
             print(token.id)
 
     def do_show(self, args):
-        """Prints the string representation of an instance based
+        """ This func Prints the string representation of an instance based
         on the class name and id"""
 
         args = args.split()
@@ -57,8 +57,8 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, args):
-        """Deletes an instance based on the class name and id (save the change
-        into the JSON file)."""
+        """ This func Deletes an instance based on the class name
+        and id (save the change into the JSON file)."""
 
         args = args.split()
         if not args:
@@ -77,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_all(self, args):
-        """Prints all string representation of all instances
+        """This func Prints all string representation of all instances
         based or not on the class name.  """
 
         data = storage.all()
@@ -96,8 +96,10 @@ class HBNBCommand(cmd.Cmd):
                 print(mylist)
 
     def do_update(self, args):
-        """Updates an instance based on the class name and id by adding
-        or updating attribute (save the change into the JSON file)."""
+        """
+        This func Updates an instance based on the class name and id
+        by adding or updating attribute (save the change into the JSON file).
+        """
 
         args = args.split()
         data = storage.all()
@@ -126,16 +128,16 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_quit(self, args):
-        """exit the program"""
+        """This func exit the program"""
 
         return True
 
     def do_EOF(self, line):
-        """exit the program for EOF signal """
+        """This func exit the program for EOF signal """
         return True
 
     def emptyline(self):
-        """shouldn t execute anything"""
+        """This func shouldn t execute anything"""
         pass
 
 if __name__ == '__main__':

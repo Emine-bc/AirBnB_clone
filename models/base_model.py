@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-create class basemodel
+This module contain  class BaseModel
 '''
 import uuid
 from datetime import datetime
@@ -9,11 +9,11 @@ import models
 
 class BaseModel:
     '''
-    that defines all common attributes/methods for other classes
+    BaseModel class
     '''
 
     def __init__(self, *args, **kwargs):
-        """init"""
+        """Function init"""
         if kwargs:
             for key, value in kwargs.items():
                 if key in ['created_at']:
@@ -30,7 +30,7 @@ class BaseModel:
 
     def to_dict(self):
         """
-        function to_dict
+        Function to_dict
         """
 
         dic = {}
@@ -45,7 +45,7 @@ class BaseModel:
 
     def save(self):
         """
-        fucntion save
+        Function save
         """
 
         self.updated_at = datetime.now()
@@ -53,6 +53,6 @@ class BaseModel:
         models.storage.save()
 
     def __str__(self):
-        """function str"""
+        """Function str"""
         return "[{}] ({}) {}".format(self.__class__.__name__,
                                      self.id, self.__dict__)

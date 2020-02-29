@@ -8,15 +8,15 @@ The tasks to be performed are:
 - Put in place a parent class (called BaseModel)
 to take care of the initialization,
 serialization and deserialization of our future
-instances
+instances.
 - Create a simple flow of serialization/deserialization:
 Instance <-> Dictionary <-> JSON string <-> file
 create all classes used for AirBnB
-(User, State, City, Place…) that inherit from BaseModel
+(User, State, City, Place…) that inherit from BaseModel.
 - Create the first abstracted storage engine of
 the project:File storage.
 - Create all unittests to validate all our classes
-and storage engine
+and storage engine.
 
 Command interpreter:
 ----------------------
@@ -30,22 +30,72 @@ The console
 - Manage (create, update, destroy, etc) objects via
 a console / command interpreter.
 - Store and persist objects to a file (JSON file)
-The first piece is to manipulate a powerful storage
-system. This storage engine will give us
+the first piece is to manipulate a powerful storage
+system, this storage engine will give us
 an abstraction between “My object” and
-“How they are stored and persisted”
-This abstraction will also allow you to
+“How they are stored and persisted”,
+this abstraction will also allow you to
 change the type of storage easily without updating
 all of our codebase
 
 How to start it
 ---------------------------------------------------
-cmd: ./console
+
+```sh
+$ ./console.py
+```
+
+
 ![console](https://i.imgur.com/Cacz3dg.png)
 
 how to use it
 ------------------------
 
+#### Create Command
 
-examples
-------------------------------------------
+```sh
+(hbnb) create <Model_name>
+```
+
+#### Update Command
+
+```sh
+(hbnb) update <Model_name> <id> <attribute name> <value>
+```
+
+#### Show Command
+
+```sh
+(hbnb) show <Model_name> <id>
+```
+
+#### All Command
+
+```sh
+(hbnb) all <Model_name>
+```
+
+#### Destroy Command
+
+```sh
+(hbnb) destroy <Model_name> <id>
+```
+
+#### Help Command
+
+```sh
+(hbnb) help
+```
+
+#### Quit Command
+
+```sh
+(hbnb) quit
+```
+
+
+#### Written by :
+
+  - [Khalil Sdiri](https://github.com/khalilholberton/)
+
+  - [Amine Bouchahda](https://github.com/amine784/)
